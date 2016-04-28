@@ -85,10 +85,19 @@ public class JdbcUtil {
         ds.setUsername(userName);
         ds.setPassword(password);
         ds.setUrl(url);
+        ds.setTestWhileIdle(true);
+        ds.setMinEvictableIdleTimeMillis(600);
+        ds.setTimeBetweenEvictionRunsMillis(300);
+        ds.setNumTestsPerEvictionRun(-1);
+        ds.setValidationQuery("SELECT 1");
+        ds.setTestOnBorrow(true);
+        ds.setTestOnReturn(true);
 
         //  By pooling/reusing PreparedStatements, we get a major performance gain
         ds.setPoolPreparedStatements(true);
         ds.setMaxActive(100);
+        ds.setMaxIdle(30);
+        ds.setMaxWait(10000);
         
         activeConnectionCount = new HashMap<String,Integer>();
         
