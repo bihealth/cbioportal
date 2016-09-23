@@ -23,6 +23,10 @@
            </b:property>
         </b:bean>
 
+    <!-- Hack to make the EmbeddedValueResolver available outside the context. -->
+    <b:bean id="embeddedValueResolverProvider" class="org.mskcc.cbio.portal.util.EmbeddedValueResolverProvider" />
+
+
     <!-- support for general annotations within class definitions (used in AccessControl) -->
     <context:annotation-config/>
 

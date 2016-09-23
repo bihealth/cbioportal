@@ -18,10 +18,13 @@
             <property name="locations">
               <list>
                 <value>file:///${PORTAL_HOME}/portal.properties</value>
-                <value>classpath:/portal.properties</value>
+                <value>classpath:portal.properties</value>
               </list>
             </property>
           </bean>
+
+        <!-- Hack to make the EmbeddedValueResolver available outside the context. -->
+        <bean id="embeddedValueResolverProvider" class="org.mskcc.cbio.portal.util.EmbeddedValueResolverProvider" />
 
         <!-- scan for mappers and let them be autowired -->
         <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">

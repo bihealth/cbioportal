@@ -1,0 +1,174 @@
+# app name
+app.name=cbioportal
+app.version=${timestamp}
+
+# database
+db.user=${CBIOPORTAL_DB_USER:cbio_user}
+db.password=${CBIOPORTAL_DB_PASSWORD:somepassword}
+db.host=${CBIOPORTAL_DB_HOST:localhost}
+db.portal_db_name=${CBIOPORTAL_DB_DATABASE:cbioportal}
+db.driver=${CBIOPORTAL_DB_DATABASE:com.mysql.jdbc.Driver}
+db.connection_string=${CBIOPORTAL_DB_CONNECTION_STRING:jdbc:mysql://localhost/}
+db.tomcat_resource_name=${CBIOPORTAL_DB_CONNECTION_RESOURCE_NAME:jdbc/cbioportal}
+# this is the *expected* DB version (expected by the code). Don't set it manually, it is filled by maven:
+db.version=${db.version}
+
+# web page cosmetics
+skin.title=${CBIOPORTAL_SKIN_TITLE:cBioPortal for Cancer Genomics}
+skin.email_contact=${CBIOPORTAL_SKIN_EMAIL_CONTACT:cbioportal at googlegroups dot com}
+skin.authorization_message=${CBIOPORTAL_SKIN_AUTHORIZATION_MESSAGE:Access to this portal is only available to authorized users at Memorial Sloan Kettering Cancer Center.  [<a href="http://bit.ly/ZevaHa">Request Access</a>].}
+skin.example_study_queries=${CBIOPORTAL_SKIN_EXAMPLE_STUDY_QUERIES:tcga\ntcga -provisional\ntcga -moratorium\ntcga OR icgc\n-"cell line"\nprostate mskcc\nesophageal OR stomach\nserous\nbreast}
+skin.data_sets_header=${CBIOPORTAL_SKIN_DATA_SETS_HEADER:The portal currently contains data from the following cancer genomics studies.  The table below lists the number of available samples per data type and tumor.}
+skin.data_sets_footer=${CBIOPORTAL_SKIN_DATA_SETS_FOOTER:Data sets of TCGA studies were downloaded from Broad Firehose (http://gdac.broadinstitute.org) and updated monthly. In some studies, data sets were from the TCGA working groups directly.}
+skin.examples_right_column=${CBIOPORTAL_SKIN_EXAMPLES_RIGHT_COLUMN:examples.html}
+
+# documentation pages
+skin.documentation.baseurl=https://github.com/cBioPortal/cbioportal/wiki/
+skin.documentation.markdown=true
+skin.documentation.faq=FAQ.md
+skin.documentation.about=About-Us.md
+skin.documentation.skin.news=News.md
+
+# setting controlling the logos
+skin.right_logo=mskcc_logo_3d_grey.jpg
+skin.tag_line_image=tag_line.png
+
+# setting controlling which tabs to hide.
+skin.show_news_tab=true
+skin.show_data_tab=true
+skin.show_web_api_tab=true
+skin.show_r_matlab_tab=true
+skin.show_tutorials_tab=true
+skin.show_faqs_tab=true
+skin.show_tools_tab=true
+skin.show_about_tab=true
+skin.show_visualize_your_data_tab=true
+
+# settings controlling the whats new blurb
+skin.right_nav.whats_new_blurb=<p> &bull;<a href="news.jsp"> <b>New data and features released</b></a><br/> &bull;<a href="tools.jsp"> <b>New tools released</b></a> </p> <form action="http://groups.google.com/group/cbioportal-news/boxsubscribe"> &nbsp;&nbsp;&nbsp;&nbsp;<b>Sign up for low-volume email news alerts:</b></br> &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="email"> <input type="submit" name="sub" value="Subscribe"> </form> &nbsp;&nbsp;&nbsp;&nbsp;<b>Or follow us <a href="http://www.twitter.com/cbioportal"><i>@cbioportal</i></a> on Twitter</b>
+
+# setting controlling the blurb
+skin.blurb=The cBioPortal for Cancer Genomics provides <b>visualization</b>, <b>analysis</b> and <b>download</b> of large-scale cancer genomics data sets.  <p>Please adhere to <u><a href="http://cancergenome.nih.gov/abouttcga/policies/publicationguidelines"> the TCGA publication guidelines</a></u> when using TCGA data in your publications.</p> <p><b>Please cite</b> <a href="http://www.ncbi.nlm.nih.gov/pubmed/23550210">Gao et al. <i>Sci. Signal.</i> 2013</a> &amp;  <a href="http://cancerdiscovery.aacrjournals.org/content/2/5/401.abstract">Cerami et al. <i>Cancer Discov.</i> 2012</a> when publishing results based on cBioPortal.</p>
+
+# setting controlling the footer
+skin.footer= | <a href="http://www.mskcc.org/mskcc/html/44.cfm">MSKCC</a> | <a href="http://cancergenome.nih.gov/">TCGA</a>
+
+# setting controlling html for the contact
+skin.login.contact_html=If you think you have received this message in error, please contact us at <a style="color:#FF0000" href="mailto:cbioportal-access@cbio.mskcc.org">cbioportal-access@cbio.mskcc.org</a>
+
+# setting controlling the saml registration
+skin.login.saml.registration_html=Sign in with MSK
+
+# setting controlling which tabs to hide/show in the patient view
+skin.patient_view.show_clinical_trials_tab=false
+skin.patient_view.show_drugs_tab=false
+
+# settings controlling what to show in the right navigation bar
+skin.right_nav.show_data_sets=true
+skin.right_nav.show_examples=true
+skin.right_nav.show_testimonials=true
+
+# settings controlling what to show in the right navigation bar
+skin.study_view.link_text=To build your own case set, try out our enhanced Study View.
+
+# authentication
+## is authorization enabled at all? (true, false)
+authorization=${CBIOPORTAL_AUTHORIZATION:false}
+## which method of authentication to use (false, googleplus, saml, openid, ad, ldap)
+authenticate=${CBIOPORTAL_AUTHENTICATE:false}
+## Should the permissions for groups and users be filtered by this instance's app.name?
+## (true means the system only handles "CBIOPORTAL:someGroupPermission" groups, false means "someGroupPermission" works)
+filter_groups_by_appname=${CBIOPORTAL_FILTER_GROUPS_BY_APPNAME:true}
+## settings to connect to googleplus auth infrastructure
+googleplus.consumer.key=${CBIOPORTAL_GOOGLEPLUS_CONSUMER_KEY}
+googleplus.consumer.secret=${CBIOPORTAL_GOOGLEPLUS_CONSUMER_SECRET}
+## settings to connect to SAML auth server
+saml.sp.metadata.entityid=
+saml.idp.metadata.location=
+saml.idp.metadata.entityid=
+saml.keystore.location=
+saml.keystore.password=
+saml.keystore.private-key.key=
+saml.keystore.private-key.password=
+saml.keystore.default-key=
+## settings to connect to an Active Directory domain controller
+ad.domain=
+ad.url=
+## configuration for the LDAP access
+ldap.user_search_base=${CBIOPORTAL_LDAP_USER_SEARCH_BASE:DC=example,DC=com}
+ldap.url=${CBIOPORTAL_LDAP_URL:ldap://ldap.example.com}
+ldap.manager.dn=${CBIOPORTAL_LDAP_MANAGER_DN:CN=manager-user,DC=example,DC=com}
+ldap.manager.password=${CBIOPORTAL_LDAP_MANAGER_PASSWORD:PASSWORD}
+## The following attributes for are good for ActiveDirectory, for OpenLDAP use "uid" for username
+ldap.attributes.username=${CBIOPORTAL_LDAP_ATTRIBUTES_USERNAME:sAMAccountName}
+ldap.attributes.last_name=${CBIOPORTAL_LDAP_ATTRIBUTES_LAST_NAME:sn}
+ldap.attributes.given_name=${CBIOPORTAL_LDAP_ATTRIBUTES_GIVEN_NAME:givenName}
+ldap.attributes.email=${CBIOPORTAL_LDAP_ATTRIBUTES_EMAIL:mail}
+
+# always show studies with this group
+always_show_study_group=
+
+# patient view settings
+patient_view_placeholder=false
+patient_view_genomic_overview_cna_cutoff=0.2,1.5
+digitalslidearchive.iframe.url=http://cancer.digitalslidearchive.net/index_mskcc.php?slide_name=
+digitalslidearchive.meta.url=http://cancer.digitalslidearchive.net/local_php/get_slide_list_from_db_groupid_not_needed.php?slide_name_filter=
+tumor_image.url=http://cbio.mskcc.org/cancergenomics/tcga-tumor-images/
+tcga_path_report.url=https://github.com/cbioportal/datahub/raw/master/tcga/pathology_reports/pathology_reports.txt
+
+# various url's
+segfile.url=http://cbio.mskcc.org/cancergenomics/gdac-portal/seg/
+
+# Enable OncoKB annotation
+oncokb.url=http://oncokb.org/legacy-api/
+
+# Enable Chang's hotspot list (true, false)
+show.hotspot=true
+
+# Link to My Cancer Genome. Please disable (set to false) when using cBioPortal with patient identifiable data due My Cancer Genome license restrictions.
+mycancergenome.show=true
+
+# igv bam linking
+igv.bam.linking=
+# colon delimited
+igv.bam.linking.studies=
+openssl.binary=
+signature.key=
+encryption.key=
+broad.bam.url=
+broad.bam.checking.url=
+
+# pathway settings
+include_networks=true
+pathway_commons.url=http://www.pathwaycommons.org/pc2
+
+# bitly, please use your bitly user and apiKey
+bitly.url=http://api.bit.ly/shorten?login=[bitly.user]&apiKey=[bitly.apiKey]&
+
+# pdb url
+pdb.database.url=http://rcsb.org/pdb/files/
+
+
+# google analytics
+google_analytics_profile_id=
+
+# genomespace linking
+genomespace=true
+
+# set this to true if you update cancer studies in your production database without shutting the web server
+recache_study_after_update=false
+
+# session-service url: http://[host]:[port]/[session_service_app]/api/sessions/[portal_instance]/ 
+# example session-service url: http://localhost:8080/session_service/api/sessions/public_portal/
+# see: https://github.com/cBioPortal/session-service
+# excluding this value or setting it to an empty string will revert to the previous bookmarking method
+session.service.url=
+
+# disabled tabs, | delimited
+# possible values: cancer_types_summary, mutual_exclusivity, plots, mutations, co_expression, enrichments, survival, network, download, bookmark, IGV
+disabled_tabs=
+
+
+## Don't touch the lines below, onlyl update them when you update authenticate= above
+spring.profiles.active=${dbconnector:jndi},${CBIOPORTAL_AUTHENTICATE:false}
+spring.liveBeansView.mbeanDomain=${dbconnector:jndi},${CBIOPORTAL_AUTHENTICATE:false}

@@ -322,7 +322,7 @@
         <version>2.16</version>
         <configuration>
           <forkMode>always</forkMode>
-          <filtering>true</filtering>
+          <filtering>false</filtering>
           <systemProperties>
             <property>
               <name>log4j.configuration</name>
@@ -390,6 +390,8 @@
               <resources>
                 <resource>
                   <directory>${project.parent.basedir}/src/main/resources</directory>
+                  <!-- Ensure that the db.version is passed into the properties file -->
+                  <filtering>true</filtering>
                   <includes>
                     <include>**/*.properties</include>
                   </includes>
@@ -433,7 +435,7 @@
       </resource>
       <resource>
         <directory>../src/main/resources</directory>
-        <filtering>true</filtering>
+        <filtering>false</filtering>
         <includes>
             <include>**/portal.properties</include>
         </includes>

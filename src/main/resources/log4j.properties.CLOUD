@@ -1,0 +1,13 @@
+# Log4J configuration logging to stderr, as useful in cloud/"12 Factor" deployments
+
+# Change INFO to DEBUG, if you want to see debugging info on underlying libraries we use.
+log4j.rootLogger=DEBUG, a
+
+# Change INFO to DEBUG, if you want see debugging info on our packages only.
+log4j.category.org.mskcc=DEBUG
+
+log4j.appender.a = org.apache.log4j.ConsoleAppender
+log4j.appender.a.Threshold = DEBUG
+log4j.appender.a.Target   = System.err
+log4j.appender.a.layout = org.apache.log4j.PatternLayout
+log4j.appender.a.layout.ConversionPattern = %-5p %d [%t][%F:%L] : %m%n

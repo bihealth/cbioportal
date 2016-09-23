@@ -22,6 +22,10 @@
           </list>
         </property>
       </bean>
+
+    <!-- Hack to make the EmbeddedValueResolver available outside the context. -->
+    <bean id="embeddedValueResolverProvider" class="org.mskcc.cbio.portal.util.EmbeddedValueResolverProvider" />
+
       <bean name="/applicationSwaggerConfig" class="org.mskcc.cbio.portal.swagger.ApiServiceSwaggerConfig">
       </bean>
 

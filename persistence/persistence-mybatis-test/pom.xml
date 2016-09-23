@@ -49,7 +49,7 @@
 		<testResources>
             <testResource>
                 <directory>${project.basedir}/src/test/resources</directory>
-                <filtering>true</filtering>
+                <filtering>false</filtering>
             </testResource>
         </testResources>
 
