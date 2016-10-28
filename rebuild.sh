@@ -3,9 +3,9 @@
 export PORTAL_HOME=${PWD}/src/main/resources
 
 export CBIOPORTAL_DB_USER="cbio_user"
-export CBIOPORTAL_DB_PASSWORD="XXXXX"
-export CBIOPORTAL_DB_HOST="XXXX"
-export CBIOPORTAL_CONNECTION_STRING="jdbc:mysql://XXXX/"
+export CBIOPORTAL_DB_PASSWORD="Eepheiy7"
+export CBIOPORTAL_DB_HOST="cubi16.bihealth.org"
+export CBIOPORTAL_CONNECTION_STRING="jdbc:mysql://cubi16.bihealth.org/"
 
 export PORT=8088
 export JAVA_OPTS="-Xmx4096m -Xms4096m -XX:+UseCompressedOops"
