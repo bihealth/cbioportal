@@ -82,6 +82,15 @@ def get_portal_properties(properties_filename):
         properties[property[0]] = property[1].strip()
     properties_file.close()
 
+    if 'PORTAL_db__host' in os.environ and os.environ['PORTAL_db__host']:
+        properties[DATABASE_HOST] = os.environ['PORTAL_db__host']
+    if 'PORTAL_db__portal_db_name' in os.environ and os.environ['PORTAL_db__portal_db_name']:
+        properties[DATABASE_NAME] = os.environ['PORTAL_db__portal_db_name']
+    if 'PORTAL_db__user' in os.environ and os.environ['PORTAL_db__user']:
+        properties[DATABASE_USER] = os.environ['PORTAL_db__user']
+    if 'PORTAL_db__password' in os.environ and os.environ['PORTAL_db__password']:
+        properties[DATABASE_PW] = os.environ['PORTAL_db__password']
+
     if (DATABASE_HOST not in properties or len(properties[DATABASE_HOST]) == 0 or
         DATABASE_NAME not in properties or len(properties[DATABASE_NAME]) == 0 or
         DATABASE_USER not in properties or len(properties[DATABASE_USER]) == 0 or
