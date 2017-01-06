@@ -53,6 +53,11 @@ DEALLOCATE PREPARE stmt;
 UPDATE info SET DB_SCHEMA_VERSION="1.2.1";
 
 ##version: 1.3.0
+ALTER TABLE gene ENGINE = InnoDB;
+ALTER TABLE cancer_study ENGINE = InnoDB;
+ALTER TABLE sample ENGINE = InnoDB;
+ALTER TABLE genetic_profile ENGINE = InnoDB;
+
 DROP TABLE IF EXISTS `clinical_trial_keywords`;
 DROP TABLE IF EXISTS `clinical_trials`;
 ALTER TABLE `users` CONVERT TO CHARACTER SET utf8;
